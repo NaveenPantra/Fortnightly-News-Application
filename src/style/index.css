@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Libre+Franklin:100i,200,200i,300,400,500,500i,600,600i,700,700i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Playball&display=swap");
+/* @import url("https://fonts.googleapis.com/css?family=Open+Sans:600,700&display=swap"); */
+/* @import url("https://fonts.googleapis.com/css?family=Ubuntu:500,700&display=swap"); */
+@import url("https://fonts.googleapis.com/css?family=Dosis:700&display=swap");
+
+:root {
+  --color-midnight-blue: #2c3e50;
+  --color-wet-asphalt: #34495e;
+  --color-background-blue: #e6f5ff;
+  --color-content-name: #535b62;
+  --color-breadcrumb-active: #001800;
+  --color-brackcrumb-inactive: #81878c;
+  --color-delete: #ff5942;
+  --color-side-drawer-text: #2f363f;
+  --color-side-drawer-background: #f9fafc;
+  --color-collapse-border: #eeeff1;
+  --color-side-drawer-header: #afb2b6;
+  --color-modal-overlay: #e4e4e417;
+  --color-grey-light-2: #f4f2f2;
+  --color-modal-background: #fff;
+  --color-context-menu-option-bck: #eeeff1;
+  --modal-border: 1px solid rgba(221, 224, 228, 0.7);
+  --modal-box-shadow: 0 16px 64px 0 rgba(0, 0, 0, 0.08);
+  --input-border: 1px solid #dde0e4;
+  --color-blue-background: #4ab7ff;
+  --color-input-placeholder: #afb2b6;
+  --color-tag-separator: #d5d5d5;
+
+  --object-selection-border-radius: 8px;
+  --tree-side-border: 2px solid var(--color-context-menu-option-bck);
+
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+  --line: 1px solid var(--color-grey-light-2);
+  --dotted-line: 1px dotted var(--color-input-placeholder);
+  --linear-gradient-white: linear-gradient(to right, #ffffff78, white);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 62.5% is 10px (i.e 62.5% of 16px is 10px) now 1rem = 10px usefull in responsive design */
+  position: relative;
+}
+
+body {
+  font-family: "Libre Franklin", sans-serif;
+  /* font-family: "Merriweather", serif; */
+  font-weight: 400;
+  color: var(--color-midnight-blue);
+  position: relative;
+  background: #fff;
+}
+
+#root {
+  display: flex;
+  justify-content: flex-start;
+}
+
+a,
+a:visited,
+a:active {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--color-midnight-blue);
+}
+
+a:hover {
+  color: var(--color-wet-asphalt);
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button,
+input {
+  font-family: "Lato", sans-serif;
+  border: none;
+  background: transparent;
+  outline: "none";
+}
+
+@keyframes slowAppear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 47rem) {
+  body {
+    max-width: 45rem;
+    padding: 1rem;
+    margin: 2rem auto;
+    box-shadow: var(--shadow-dark);
+  }
+}

@@ -1,0 +1,7 @@
+.header {
+  padding: 1rem;
+  box-shadow: var(--shadow-light);
+  font-family: "Playball", cursive;
+  display: flex;
+  align-items: center;
+}
