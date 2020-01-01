@@ -2,5 +2,7 @@ node_modules
 /build
 /*.log
 *.lock
+.code
+.idea
 
 package-lock.json
