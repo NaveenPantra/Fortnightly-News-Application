@@ -1,11 +1,231 @@
 export const ACTIONS = {
   GET_NEWS_CONTENT: "GET_NEWS_CONTENT",
-  DELETE_NEWS_CONTENT: "DELETE_NEWS_CONTENT"
+  DELETE_NEWS_CONTENT: "DELETE_NEWS_CONTENT",
+  SET_NEWS_ITEMS: "SET_NEWS_ITEMS",
+  SET_NEWS_ITEM: "SET_NEWS_ITEM",
+  ERROR_FETCHING_DATA: "ERROR_FETCHING_DATA",
+  SET_LOADING_NEWS_ITEMS: "SET_LOADING_NEWS_ITEMS",
+  SET_ERROR_LOADING_NEWS_ITEMS: "SET_ERROR_LOADING_NEWS_ITEMS"
 };
 
 export const INITIAL_NEWS_DATA = {
   1100: {
     displayType: 1,
+    isCompletlyFetched: false,
+    newsID: "1100",
+    newsPrimeImageURL:
+      "https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=40",
+    tags: [
+      {
+        tagName: "MEDICAL"
+      }
+    ],
+    views: "2M",
+    headline: "The Quite, Yet Powerful Healthcare Revolution"
+  },
+
+  1101: {
+    displayType: 0,
+    isCompletlyFetched: false,
+    newsID: "1101",
+    newsPrimeImageURL:
+      "https://images.unsplash.com/photo-1542367787-4baf35f3037d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=150&q=30",
+    // "https://images.unsplash.com/photo-1494832944834-a08818c634b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80",
+    // "https://images.unsplash.com/photo-1574637428550-018f1f368d03?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMDk0fQ&auto=format&fit=crop&w=3334&q=80",
+    tags: [
+      {
+        tagName: "US"
+      }
+    ],
+    views: "1M",
+    headline: "Poverty To Empoverment In Chicago"
+  },
+
+  1102: {
+    displayType: 0,
+    isCompletlyFetched: false,
+    newsID: "1102",
+    newsPrimeImageURL:
+      "https://images.unsplash.com/photo-1577447073438-c6b887157c24?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=150&q=30",
+    tags: [
+      {
+        tagName: "Dogs"
+      }
+    ],
+    views: "5M",
+    headline: "Dogs Cost More Than Cancer Treatment"
+  },
+
+  1103: {
+    displayType: 0,
+    isCompletlyFetched: false,
+    newsID: "1103",
+    newsPrimeImageURL:
+      "https://images.unsplash.com/photo-1474552226712-ac0f0961a954?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=150&q=30",
+    tags: [
+      {
+        tagName: "Valentains"
+      }
+    ],
+    views: "10M",
+    headline: "Companies To Launch Plans for this Valentains Day"
+  },
+
+  1104: {
+    displayType: 0,
+    isCompletlyFetched: false,
+    newsID: "1104",
+    newsPrimeImageURL:
+      "https://images.unsplash.com/photo-1515715709530-858f7bfa1b10?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=150&q=30",
+    tags: [
+      {
+        tagName: "Wedding"
+      }
+    ],
+    views: "7M",
+    headline: "Event Planners are in Search of New Methods"
+  },
+
+  1105: {
+    displayType: 2,
+    isCompletlyFetched: false,
+    newsID: "1105",
+    newsPrimeImageURL:
+      "https://images.unsplash.com/photo-1549417229-7686ac5595fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=40",
+    newsImages: [
+      "https://images.unsplash.com/photo-1549417229-7686ac5595fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=40",
+      "https://images.unsplash.com/photo-1513725673171-537abba17912?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=40"
+    ],
+    tags: [
+      {
+        tagName: "Wedding"
+      }
+    ],
+    views: "7M",
+    headline: "Event Planners are in Search of New Methods"
+  },
+
+  1106: {
+    displayType: 0,
+    isCompletlyFetched: false,
+    newsID: "1106",
+    newsPrimeImageURL:
+      "https://images.unsplash.com/photo-1498452572341-c087c3ee25fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=30",
+    tags: [
+      {
+        tagName: "SPACE"
+      }
+    ],
+    views: "5M",
+    headline: "scientists in Search of Life in Deep Space!"
+  },
+
+  1107: {
+    displayType: 0,
+    isCompletlyFetched: false,
+    newsID: "1107",
+    newsPrimeImageURL:
+      "https://images.unsplash.com/photo-1544650039-22886fbb4323?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=30",
+    newsImages: [],
+    tags: [
+      {
+        tagName: "FASHION"
+      }
+    ],
+    views: "5M",
+    headline: "Michelle Obama to start new Fashion Trend!"
+  },
+
+  1108: {
+    displayType: 0,
+    isCompletlyFetched: false,
+    newsID: "1108",
+    newsPrimeImageURL:
+      "https://images.unsplash.com/photo-1489875347897-49f64b51c1f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=30",
+    newsImages: [],
+    tags: [
+      {
+        tagName: "JOBS"
+      }
+    ],
+    views: "5M",
+    headline: "More Engineering are Rushing for IT Jobs in Inida"
+  },
+
+  1109: {
+    displayType: 0,
+    isCompletlyFetched: false,
+    newsID: "1109",
+    newsPrimeImageURL:
+      "https://images.unsplash.com/photo-1467019972079-a273e1bc9173?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=30",
+    newsImages: [],
+    tags: [
+      {
+        tagName: "FOOD"
+      }
+    ],
+    views: "100",
+    headline: "Oninon Prices in Inida to touch Sky..."
+  },
+
+  1110: {
+    displayType: 3,
+    isCompletlyFetched: false,
+    newsID: "1110",
+    newsPrimeImageURL:
+      "https://images.unsplash.com/photo-1489731300081-a03b0ce82303?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
+    newsImages: [
+      "https://images.unsplash.com/photo-1489731300081-a03b0ce82303?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=40",
+      "https://images.unsplash.com/photo-1553786815-138920395604?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=40",
+      "https://images.unsplash.com/photo-1520483937043-ff3d8ce309b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=40"
+    ],
+    tags: [
+      {
+        tagName: "ATV"
+      }
+    ],
+    views: "23M",
+    headline: "ATV Racing Traks can be Seen in India Thar"
+  }
+};
+
+export const NEWS_ITEMS_SKELETON = {
+  newsItems: {},
+  isLoadingNewsItems: true,
+  isErrorLoadingNewsItems: true,
+  errorMessage: ""
+};
+
+export const NEWS_DATA_SKELETON = {
+  displayType: 1,
+  isCompletlyFetched: true,
+  newsID: "",
+  newsPrimeImageURL: "",
+  newsImages: [],
+  tags: [],
+  views: "",
+  headline: "",
+  subText: "",
+  likes: 0,
+  disLikes: 0,
+  paragraphs: [],
+  commnets: {
+    commentsID: "",
+    count: 0,
+    data: {}
+  },
+  author: {
+    authorID: "",
+    name: "",
+    imageURL: ""
+  },
+  relatedArticals: []
+};
+
+export const NEWS_ITEMS_DATA = {
+  1100: {
+    displayType: 1,
+    isCompletlyFetched: true,
     newsID: "1100",
     newsPrimeImageURL:
       "https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=40",
@@ -64,6 +284,7 @@ export const INITIAL_NEWS_DATA = {
 
   1101: {
     displayType: 0,
+    isCompletlyFetched: true,
     newsID: "1101",
     newsPrimeImageURL:
       "https://images.unsplash.com/photo-1542367787-4baf35f3037d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=150&q=30",
@@ -99,6 +320,7 @@ export const INITIAL_NEWS_DATA = {
 
   1102: {
     displayType: 0,
+    isCompletlyFetched: true,
     newsID: "1102",
     newsPrimeImageURL:
       "https://images.unsplash.com/photo-1577447073438-c6b887157c24?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=150&q=30",
@@ -134,6 +356,7 @@ export const INITIAL_NEWS_DATA = {
 
   1103: {
     displayType: 0,
+    isCompletlyFetched: true,
     newsID: "1103",
     newsPrimeImageURL:
       "https://images.unsplash.com/photo-1474552226712-ac0f0961a954?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=150&q=30",
@@ -169,6 +392,7 @@ export const INITIAL_NEWS_DATA = {
 
   1104: {
     displayType: 0,
+    isCompletlyFetched: true,
     newsID: "1104",
     newsPrimeImageURL:
       "https://images.unsplash.com/photo-1515715709530-858f7bfa1b10?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=150&q=30",
@@ -204,6 +428,7 @@ export const INITIAL_NEWS_DATA = {
 
   1105: {
     displayType: 2,
+    isCompletlyFetched: true,
     newsID: "1105",
     newsPrimeImageURL:
       "https://images.unsplash.com/photo-1549417229-7686ac5595fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=40",
@@ -243,6 +468,7 @@ export const INITIAL_NEWS_DATA = {
 
   1106: {
     displayType: 0,
+    isCompletlyFetched: true,
     newsID: "1106",
     newsPrimeImageURL:
       "https://images.unsplash.com/photo-1498452572341-c087c3ee25fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=30",
@@ -278,6 +504,7 @@ export const INITIAL_NEWS_DATA = {
 
   1107: {
     displayType: 0,
+    isCompletlyFetched: true,
     newsID: "1107",
     newsPrimeImageURL:
       "https://images.unsplash.com/photo-1544650039-22886fbb4323?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=30",
@@ -312,6 +539,7 @@ export const INITIAL_NEWS_DATA = {
 
   1108: {
     displayType: 0,
+    isCompletlyFetched: true,
     newsID: "1108",
     newsPrimeImageURL:
       "https://images.unsplash.com/photo-1489875347897-49f64b51c1f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=30",
@@ -346,6 +574,7 @@ export const INITIAL_NEWS_DATA = {
 
   1109: {
     displayType: 0,
+    isCompletlyFetched: true,
     newsID: "1109",
     newsPrimeImageURL:
       "https://images.unsplash.com/photo-1467019972079-a273e1bc9173?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=30",
@@ -380,6 +609,7 @@ export const INITIAL_NEWS_DATA = {
 
   1110: {
     displayType: 3,
+    isCompletlyFetched: true,
     newsID: "1110",
     newsPrimeImageURL:
       "https://images.unsplash.com/photo-1489731300081-a03b0ce82303?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",

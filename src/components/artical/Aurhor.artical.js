@@ -8,14 +8,21 @@ const styles = {
     display: "flex",
     alignItems: "center"
   },
+  figurePlaceholderStyle: {
+    marginTop: 0
+  },
   image: {
     width: "4.5rem",
     height: "4.5rem",
     objectFit: "cover",
     borderRadius: "50%",
-    marginRight: "1rem"
+    marginRight: "1rem",
+    background: "var(--color-collapse-border)"
   },
   figcaption: {
+    display: "flex",
+    alignItems: "center",
+
     "& > span:nth-of-type(1)": {
       fontSize: "1.6rem",
       marginRight: "1rem",
@@ -29,7 +36,7 @@ const styles = {
     fontStyle: "italic",
     fontWeight: 700,
     display: "block",
-    transform: "translateY(3px)",
+    // transform: "translateY(3px)",
     // padding: 3,
     "&::after": {
       content: '""',
@@ -41,22 +48,46 @@ const styles = {
       height: ".6rem",
       background: "var(--color-tag-separator)"
     }
+  },
+  authorNameHolder: {
+    display: "block",
+    width: "13rem",
+    height: "1.6rem",
+    background: "var(--color-collapse-border)",
+    animation: "apperDisapper 1.9s linear 0.5s infinite"
   }
 };
 
 const ArticleAuthor = ({
   classes,
-  author: { authorID = "", name = "", imageURL = "" } = {}
+  author: { authorID = "", name = "", imageURL = "" } = {},
+  isCompletlyFetched = false
 }) => {
+  const imageStyle = {
+    animation: "apperDisapper 1.9s linear 0s infinite"
+  };
   return (
     <>
-      <figure class={classes.figure}>
-        <img src={imageURL} alt={name} class={classes.image} />
+      <figure
+        class={`${classes.figure} ${
+          !isCompletlyFetched ? classes.figurePlaceholderStyle : ""
+        }`}
+      >
+        <img
+          src={imageURL}
+          alt={name}
+          class={classes.image}
+          style={!isCompletlyFetched ? imageStyle : null}
+        />
         <figcaption class={classes.figcaption}>
           <span>by</span>
-          <Link href={`/author/${authorID}`}>
-            <span class={classes.authorName}>{name}</span>
-          </Link>
+          {!isCompletlyFetched ? (
+            <span class={classes.authorNameHolder}></span>
+          ) : (
+            <Link href={`/author/${authorID}`}>
+              <span class={classes.authorName}>{name}</span>
+            </Link>
+          )}
         </figcaption>
       </figure>
     </>

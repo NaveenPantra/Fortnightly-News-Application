@@ -6,7 +6,9 @@ const styles = {
   figure: {
     margin: "1rem 1.3rem",
     padding: "1.3rem 0 2rem",
-    borderBottom: "var(--dotted-line)"
+    borderBottom: "var(--dotted-line)",
+    animation: "slowAppear .3s linear",
+    animationFillMode: "backwards"
   },
   imageWrapper: {
     display: "flex",

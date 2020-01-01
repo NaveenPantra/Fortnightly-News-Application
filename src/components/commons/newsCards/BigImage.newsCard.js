@@ -6,13 +6,16 @@ const styles = {
   figure: {
     margin: "1rem 1.3rem",
     paddingBottom: "2rem",
-    borderBottom: "var(--dotted-line)"
+    borderBottom: "var(--dotted-line)",
+    animation: "slowAppear .3s linear",
+    animationFillMode: "backwards"
   },
   image: {
     width: "100%",
     minHeight: "30vh",
     maxHeight: "45vh",
-    objectFit: "cover"
+    objectFit: "cover",
+    background: "var(--color-collapse-border)"
   },
   figcaption: {},
   header: {

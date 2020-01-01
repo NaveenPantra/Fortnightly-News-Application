@@ -1,6 +1,7 @@
 import { h } from "preact";
 import { Link } from "preact-router/match";
 import withStyles from "react-jss";
+import TagPlaceholder from "./../commons/placeholders/Tags.placeholder";
 
 const styles = {
   root: {
@@ -24,6 +25,9 @@ const styles = {
       background: "var(--linear-gradient-white)",
       right: 0
     }
+  },
+  rootPlaceholderStyles: {
+    margin: "2rem 1rem 1rem"
   },
   tagName: {
     padding: "1rem",
@@ -49,13 +53,20 @@ const styles = {
   }
 };
 
-const ArticleTags = ({ classes, tags = [] }) => {
+const ArticleTags = ({ classes, tags = [], isCompletlyFetched = false }) => {
   return (
     <>
-      <section class={classes.root}>
+      <section
+        class={`${classes.root} ${
+          !isCompletlyFetched && tags.length === 0
+            ? classes.rootPlaceholderStyles
+            : ""
+        }`}
+      >
         {tags.map(tag => (
           <span class={classes.tagName}>{tag.tagName}</span>
         ))}
+        {!isCompletlyFetched ? <TagPlaceholder /> : null}
       </section>
     </>
   );

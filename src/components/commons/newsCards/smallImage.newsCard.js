@@ -11,6 +11,8 @@ const styles = {
     alignItems: "center",
     justifyContent: "space-between",
     overflow: "hidden",
+    animation: "slowAppear .3s linear",
+    animationFillMode: "backwards",
 
     "& figcaption": {
       flex: 1,
@@ -43,7 +45,7 @@ const styles = {
   }
 };
 
-const SmallImageNewsCard = ({ classes, newsData }) => {
+const SmallImageNewsCard = ({ classes, newsData, index }) => {
   const { newsPrimeImageURL, headline, tags, views } = newsData;
   const tag = typeof tags === "object" ? tags[0].tagName : "";
   return (
