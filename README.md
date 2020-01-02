@@ -38,4 +38,4 @@
 
 #### Steps to run
 
-clone the project and run `npm install` after installation run `npm start` it will automatically open the browser with url `localhost:3000` the project will be visible there.
+clone the project and run `npm install` after installation run `npm start` it will automatically open the browser with url `localhost:8080` the project will be visible there.

@@ -23,6 +23,15 @@ export const INITIAL_TAG_DATA = [
     tagName: "Rani"
   },
   {
+    tagName: "Rana"
+  },
+  {
+    tagName: "Mani"
+  },
+  {
+    tagName: "Pratap"
+  },
+  {
     tagName: "Dharani"
   },
   {
