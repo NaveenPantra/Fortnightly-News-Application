@@ -1,4 +1,4 @@
-# Fortnightly
+# Fortnightly https://news-ipp.netlify.app/
 
 ##### NOTE: This application is for practising purpose
 
